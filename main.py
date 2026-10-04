@@ -1,16 +1,18 @@
-# This is a sample Python script.
+import os
+from pathlib import Path
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+folder_path = "/Users/aneesh/Desktop/Sample-Folder/"
 
+files = os.listdir(folder_path)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+for file in files:
+    file_path = Path(os.path.join(folder_path, file))
+    print(file_path.suffix)
 
+'''
+'Path(os.path.join(folder_path, file)) ' 
+So this means  the particular path becomes the Obj of the Path Class and since its an object ,the obj has access to many methods like '.suffix' , if its not an obj it does not have access to any of the methods of Path Class 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+Am I right ? I am asking this since I havent touched OOP in Python 
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+'''
